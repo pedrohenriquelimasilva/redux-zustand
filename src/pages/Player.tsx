@@ -5,6 +5,7 @@ import { Module } from "../components/Module";
 import { useEffect } from "react";
 import { Pulse } from "../components/Pulse";
 import { useStore, useCurrentLesson } from "../zustand-store"
+import { DialogCourse } from "../components/DialogCourse";
 
 export function Player(){
   const { course, load, isLoading } = useStore(store => {
@@ -33,10 +34,9 @@ export function Player(){
         <div className="flex items-center justify-between">
           <Header />
 
-          <button className='flex items-center rounded gap-2 bg-violet-500 px-3 py-2 font-medium text-white text-sm transition-colors hover:bg-violet-600'>
-            <BookMarked className='w-4 h-4' />
-            Adicionar módulo
-          </button>
+          <DialogCourse>
+            Adicionar módulo  
+          </DialogCourse>
         </div>
         <main className='relative flex overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 shadow pr-80'>
           <div className="flex-1">
